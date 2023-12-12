@@ -15,12 +15,12 @@ import {
   NavbarText,
 } from 'reactstrap';
 
-function CustomNavbar(args) {
+const CustomNavbar = ()=> {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div>
-      <Navbar {...args}>
+      <Navbar color='dark' dark expand="md" fixed=''>
         <NavbarBrand tag={ReactLink} to="/">BlogEaze</NavbarBrand>
         <NavbarToggler onClick={()=>setIsOpen(!isOpen)}/>
         <Collapse isOpen={isOpen} navbar>
