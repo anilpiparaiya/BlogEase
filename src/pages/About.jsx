@@ -1,14 +1,15 @@
-import React from 'react'
-import Base from '../components/Base'
+import React from "react";
+import Base from "../components/Base";
 
 const About = () => {
   return (
-   
     <Base>
-    <h1>THis is about page</h1>
-    <p>we are building blog website</p>
+      <div>
+        <h1>This is About page</h1>
+        <p>Welcom to about page</p>
+      </div>
     </Base>
-  )
-}
+  );
+};
 
-export default About
+export default About;

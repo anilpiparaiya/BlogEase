@@ -1,11 +1,17 @@
 import React from 'react'
-import { Signup as SignupComponent } from '../components'
+import Base from '../components/Base'
 
-function Signup() {
+const Signup = () => {
   return (
-    <div className='py-8'>
-        <SignupComponent />
-    </div>
+
+    <Base>
+    <div>
+    <h1>This is Signup page</h1>
+    <p>Welcome to Signup page</p>
+    
+  </div>
+    </Base>
+    
   )
 }
 
