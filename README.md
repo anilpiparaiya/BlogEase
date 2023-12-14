@@ -1,4 +1,4 @@
-# Blog Management Portal using React and Appwrite
+# Blog Management Portal using React
 
 
 Which is designed to manage and serve common people's Blog management. This user-friendly platform is built using React, making it easily accessible to anyone with an internet connection.
