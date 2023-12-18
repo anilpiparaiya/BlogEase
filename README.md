@@ -23,6 +23,15 @@ BlogEase offers a range of features to enhance your daily life blog management:
 
 ## Getting Started
 
+### Prerequisites
+
+- React Node.js, middleware, HTTP protocols
+- 1. `Axios` for server call
+- 2. `react-toastify` for message displaying
+
+
+- Backend Development with Spring Boot and MySQL
+
 To get started with NoteTakingApp, follow these simple steps:
 
 1. Clone this repository to your local machine:
@@ -34,10 +43,11 @@ To get started with NoteTakingApp, follow these simple steps:
    ```bash
    cd BlogEase
    ```
+3. `npm i`
 
 3. `npm run dev`
 
-4. Runs the app in the development mode. Open [http://localhost:5173/](http://localhost:5173/) to view it in your browser.
+5. Runs the app in the development mode. Open [http://localhost:5173/](http://localhost:5173/) to view it in your browser.
 
 
 ## Usage

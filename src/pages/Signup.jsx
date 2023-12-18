@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Base from "../components/Base";
+import {signUp} from "../services/userService"
+import toast from 'react-toastify'
 import {
   Button,
   Card,
@@ -59,6 +61,19 @@ const Signup = () => {
     // data validate
 
     // call server api for sending data
+    signUp(data).then((res) =>{
+      console.log(res);
+      console.log("success log");
+      toast.success("User is registered successfully")
+      setData({name: '',
+        email: '',
+        password: '',
+        about: ''
+    })
+  }).catch((error)=>{
+      console.log(error)
+      console.log("Error log")
+    })
   }
 
 
@@ -67,7 +82,7 @@ const Signup = () => {
       <Container>
         <Row className="mt-4">
 
-            {JSON.stringify(data)}
+            {/* {JSON.stringify(data)} */}
           <Col sm={{ size: 6, offset: 3 }}>
             <Card color="dark" inverse>
               <CardHeader>Fill information to register</CardHeader>
