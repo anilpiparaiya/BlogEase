@@ -23,6 +23,7 @@ const CustomNavbar = ()=> {
       <Navbar color='dark' dark expand="md" fixed=''>
         <NavbarBrand tag={ReactLink} to="/">BlogEaze</NavbarBrand>
         <NavbarToggler onClick={()=>setIsOpen(!isOpen)}/>
+        
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
             <NavItem>
