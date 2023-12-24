@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Base from "../components/Base";
-import {signUp} from "../services/userService"
-import toast from 'react-toastify'
+import { signUp } from "../services/userService";
+import toast from "react-toastify";
+
 import {
   Button,
   Card,
@@ -14,6 +15,7 @@ import {
   Input,
   Form,
   Col,
+  FormFeedback,
 } from "reactstrap";
 
 const Signup = () => {
@@ -25,7 +27,7 @@ const Signup = () => {
   });
 
   const [error, setError] = useState({
-    error: {},
+    errors: {},
     isError: false,
   });
 
@@ -33,56 +35,66 @@ const Signup = () => {
     console.log(data);
   }, [data]);
 
-
   // Handle Change
   const handleChange = (event, property) => {
     // setting dynamic values
     setData({ ...data, [property]: event.target.value });
   };
 
-// Resetting the form
-  const resetData=()=>{
+  // Resetting the form
+  const resetData = () => {
     setData({
-        name: '',
-        email: '',
-        password: '',
-        about: ''
-    })
-  }
-
+      name: "",
+      email: "",
+      password: "",
+      about: "",
+    });
+  };
 
   //  submit the form
 
-  const submitForm=(event)=>{
-    event.preventDefault()
+  const submitForm = (event) => {
+    event.preventDefault();
+    //  if(error.isError){
+    //    toast.error("Form data is invalid, correct all details and submit !!")
+    //    setError({...error, isError:false})
+    //    return
+    // }
 
-    console.log(data)
+    console.log(data);
 
     // data validate
 
     // call server api for sending data
-    signUp(data).then((res) =>{
-      console.log(res);
-      console.log("success log");
-      toast.success("User is registered successfully")
-      setData({name: '',
-        email: '',
-        password: '',
-        about: ''
-    })
-  }).catch((error)=>{
-      console.log(error)
-      console.log("Error log")
-    })
-  }
+    signUp(data)
+      .then((res) => {
+        console.log(res);
+        console.log("success log");
+        toast.success("User is registered successfully");
+        setData({
+          name: "",
+          email: "",
+          password: "",
+          about: "",
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        console.log("Error log");
 
+        // handle error in proper way
+        setError({
+          errors: error,
+          isError: true,
+        });
+      });
+  };
 
   return (
     <Base>
       <Container>
         <Row className="mt-4">
-
-            {/* {JSON.stringify(data)} */}
+          {/* {JSON.stringify(data)} */}
           <Col sm={{ size: 6, offset: 3 }}>
             <Card color="dark" inverse>
               <CardHeader>Fill information to register</CardHeader>
@@ -97,18 +109,31 @@ const Signup = () => {
                       id="name"
                       onChange={(e) => handleChange(e, "name")}
                       value={data.name}
+                      invalid={
+                        error.errors?.response?.data?.name ? true : false
+                      }
                     />
+
+                    <FormFeedback>
+                      {error.errors?.response?.data?.name}
+                    </FormFeedback>
                   </FormGroup>
 
                   {/* Email Field */}
                   <FormGroup>
                     <Label for="email">Enter Email</Label>
-                    <Input type="email" 
-                    placeholder="Enter here" 
-                    id="email"
-                    onChange={(e)=>handleChange(e, 'email')}
-                    value={data.email}
+                    <Input
+                      type="email"
+                      placeholder="Enter here"
+                      id="email"
+                      onChange={(e) => handleChange(e, "email")}
+                      value={data.email}
+                      invalid={error.errors?.data?.email ? true : false}
                     />
+
+                    <FormFeedback>
+                      {error.errors?.response?.data?.email}
+                    </FormFeedback>
                   </FormGroup>
 
                   {/* Password Field */}
@@ -118,29 +143,48 @@ const Signup = () => {
                       type="password"
                       placeholder="Enter here"
                       id="password"
-                      onChange={(e)=>handleChange(e, 'password')}
+                      onChange={(e) => handleChange(e, "password")}
                       value={data.password}
+                      invalid={
+                        error.errors?.response?.data?.password ? true : false
+                      }
                     />
+
+                    <FormFeedback>
+                      {error.errors?.response?.data?.password}
+                    </FormFeedback>
                   </FormGroup>
 
                   {/* About Field */}
                   <FormGroup>
-                    <Label for="about">Enter </Label>
+                    <Label for="about">Write something about yourself</Label>
                     <Input
                       type="textarea"
                       placeholder="Enter here"
                       id="about"
                       style={{ height: "250px" }}
-                      onChange={(e)=>handleChange(e, 'about')}
+                      onChange={(e) => handleChange(e, "about")}
                       value={data.about}
+                      invalid={
+                        error.errors?.response?.data?.about ? true : false
+                      }
                     />
+
+                    <FormFeedback>
+                      {error.errors?.response?.data?.about}
+                    </FormFeedback>
                   </FormGroup>
 
                   <Container className="text-center">
                     <Button outline color="light">
                       Register
                     </Button>
-                    <Button onClick={resetData} color="secondary" className="ms-2" type="reset">
+                    <Button
+                      onClick={resetData}
+                      color="secondary"
+                      className="ms-2"
+                      type="reset"
+                    >
                       Reset
                     </Button>
                   </Container>
