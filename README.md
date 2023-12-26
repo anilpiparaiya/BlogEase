@@ -65,26 +65,27 @@ We welcome contributions to improve and expand NoteTakingApp! If you have sugges
    cd BlogEase
    ```
 
-3. ```bash
+4. Run the app in the development mode:
+   ```bash
   npm run dev
   ```
 
 
-4. Runs the app in the development mode. Open [http://localhost:5173/](http://localhost:5173/) to view it in your browser.
+5.  Open [http://localhost:5173/](http://localhost:5173/) to view it in your browser.
 
-5. Create a new branch for your feature or bugfix:
+6. Create a new branch for your feature or bugfix:
    ```bash
    git checkout -b feature/new-feature
    ```
-6. Make your changes and commit them:
+7. Make your changes and commit them:
    ```bash
    git commit -m 'Add new feature'
    ```
-7. Push your changes to your fork:
+8. Push your changes to your fork:
    ```bash
    git push origin feature/new-feature
    ```
-8. Open a pull request to the original repository, explaining your changes and improvements.
+9. Open a pull request to the original repository, explaining your changes and improvements.
 
 ## License
 
