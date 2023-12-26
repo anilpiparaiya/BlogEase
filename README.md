@@ -93,7 +93,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Thank you for using NoteTakingApp, your go-to website for everyday lifestyle needs. If you have any questions or feedback, please feel free to reach out to us at [anilkumarpiparaiya@gmail.com](mailto:anilkumarpiparaiya@gmail.com). Enjoy your journey to a better and more informed lifestyle!
+Thank you for using BlogEase app, your go-to website for everyday lifestyle needs. If you have any questions or feedback, please feel free to reach out to us at [anilkumarpiparaiya@gmail.com](mailto:anilkumarpiparaiya@gmail.com). Enjoy your journey to a better and more informed lifestyle!
 
 
 
