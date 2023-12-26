@@ -67,8 +67,8 @@ We welcome contributions to improve and expand NoteTakingApp! If you have sugges
 
 4. Run the app in the development mode:
    ```bash
-  npm run dev
-  ```
+   npm run dev
+   ```
 
 
 5.  Open [http://localhost:5173/](http://localhost:5173/) to view it in your browser.
