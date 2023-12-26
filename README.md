@@ -23,7 +23,7 @@ BlogEase offers a range of features to enhance your daily life blog management:
 
 ## Getting Started
 
-To get started with NoteTakingApp, follow these simple steps:
+To get started with Blog App, follow these simple steps:
 
 1. Clone this repository to your local machine:
    ```bash
@@ -54,19 +54,34 @@ BlogEase is straightforward to use. Once you've opened the website in your web b
 We welcome contributions to improve and expand NoteTakingApp! If you have suggestions, bug reports, or want to contribute code, please follow these steps:
 
 1. Fork this repository.
-2. Create a new branch for your feature or bugfix:
+
+2. Clone this repository to your local machine:
+   ```bash
+   git clone https://github.com/anilpiparaiya/BlogEase.git
+   ```
+
+3. Navigate to the project folder:
+   ```bash
+   cd BlogEase
+   ```
+
+3. `npm run dev`
+
+4. Runs the app in the development mode. Open [http://localhost:5173/](http://localhost:5173/) to view it in your browser.
+
+5. Create a new branch for your feature or bugfix:
    ```bash
    git checkout -b feature/new-feature
    ```
-3. Make your changes and commit them:
+6. Make your changes and commit them:
    ```bash
    git commit -m 'Add new feature'
    ```
-4. Push your changes to your fork:
+7. Push your changes to your fork:
    ```bash
    git push origin feature/new-feature
    ```
-5. Open a pull request to the original repository, explaining your changes and improvements.
+8. Open a pull request to the original repository, explaining your changes and improvements.
 
 ## License
 
